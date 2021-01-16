@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	mainApp := app.New()
-	window := mainApp.NewWindow("youtube-dl")
+	mainApp := app.NewWithID("com.crow.ytdl-client")
+	window := mainApp.NewWindow(ApplicationName)
 	window.Resize(fyne.Size{
 		Width:  450,
 		Height: 250,
