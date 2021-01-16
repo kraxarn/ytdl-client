@@ -26,6 +26,17 @@ func createLayout(parent fyne.Window) fyne.CanvasObject {
 		fmt.Printf("failed to get default directory: %s\n", err)
 	}
 
+	pathBrowse := widget.NewButton("...", func() {
+		dialog.ShowFolderOpen(func(uri fyne.ListableURI, err error) {
+			if err == nil && uri != nil {
+				pathEntry.SetText(strings.Replace(uri.String(), "file://", "", 1))
+			}
+		}, parent)
+	})
+
+	pathLayout := fyne.NewContainerWithLayout(layout.NewBorderLayout(nil, nil, nil, pathBrowse),
+		pathEntry, pathBrowse)
+
 	progress := widget.NewProgressBar()
 	progress.Min = 0
 	progress.Max = 1
@@ -107,7 +118,7 @@ func createLayout(parent fyne.Window) fyne.CanvasObject {
 			},
 		),
 		urlEntry,
-		pathEntry,
+		pathLayout,
 		layout.NewSpacer(),
 		fileName,
 		progress,
