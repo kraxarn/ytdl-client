@@ -62,6 +62,8 @@ func createLayout(parent fyne.Window) fyne.CanvasObject {
 
 		if strings.HasPrefix(urlEntry.Text, "https://www.youtube.com/watch?v=") && len(urlEntry.Text) >= 43 {
 			videoId = urlEntry.Text[32:43]
+		} else if strings.HasPrefix(urlEntry.Text, "https://youtu.be/") && len(urlEntry.Text) >= 28 {
+			videoId = urlEntry.Text[17:28]
 		}
 
 		if len(videoId) <= 0 {
