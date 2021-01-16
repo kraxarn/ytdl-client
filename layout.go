@@ -16,9 +16,10 @@ import (
 
 func createLayout(parent fyne.Window) fyne.CanvasObject {
 	urlEntry := widget.NewEntry()
-	urlEntry.PlaceHolder = "https://youtu.be/PayvWj2piKg"
+	urlEntry.PlaceHolder = "YouTube URL"
 
 	pathEntry := widget.NewEntry()
+	pathEntry.PlaceHolder = "Target directory"
 	if dir, err := defaultDirectory(); err == nil {
 		pathEntry.Text = dir
 	} else {
