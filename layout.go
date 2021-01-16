@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-func createLayout(app fyne.App, parent fyne.Window) fyne.CanvasObject {
+func createLayout(parent fyne.Window) fyne.CanvasObject {
 	urlEntry := widget.NewEntry()
 	urlEntry.PlaceHolder = "https://youtu.be/PayvWj2piKg"
 

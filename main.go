@@ -15,6 +15,6 @@ func main() {
 	window.CenterOnScreen()
 	window.SetIcon(fyne.NewStaticResource("icon.png", icon))
 
-	window.SetContent(createLayout(mainApp, window))
+	window.SetContent(createLayout(window))
 	window.ShowAndRun()
 }
