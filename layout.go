@@ -100,9 +100,11 @@ func createLayout(parent fyne.Window) fyne.CanvasObject {
 	})
 
 	return container.NewVBox(
-		widget.NewLabelWithStyle("youtube-dl", fyne.TextAlignCenter, fyne.TextStyle{
-			Bold: true,
-		}),
+		widget.NewLabelWithStyle(fmt.Sprintf("youtube-dl %s", CurrentVersion),
+			fyne.TextAlignCenter, fyne.TextStyle{
+				Bold: true,
+			},
+		),
 		urlEntry,
 		pathEntry,
 		layout.NewSpacer(),
